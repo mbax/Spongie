@@ -20,7 +20,7 @@
 package com.sk89q.eduardo.plugin.irc;
 
 import com.sk89q.eduardo.model.context.Room;
-import org.pircbotx.Channel;
+import org.kitteh.irc.client.library.element.Channel;
 
 class IRCRoom implements Room {
 

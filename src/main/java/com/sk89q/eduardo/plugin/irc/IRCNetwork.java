@@ -20,18 +20,19 @@
 package com.sk89q.eduardo.plugin.irc;
 
 import com.sk89q.eduardo.model.context.Network;
+import org.kitteh.irc.client.library.Client;
 
 class IRCNetwork implements Network {
 
-    private final IRCBot bot;
+    private final Client bot;
 
-    IRCNetwork(IRCBot bot) {
+    IRCNetwork(Client bot) {
         this.bot = bot;
     }
 
     @Override
     public String getId() {
-        return bot.getId();
+        return bot.getName();
     }
 
 }

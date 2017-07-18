@@ -25,9 +25,9 @@ import javax.annotation.Nullable;
 
 class IRCUser implements User {
 
-    private final org.pircbotx.User user;
+    private final org.kitteh.irc.client.library.element.User user;
 
-    IRCUser(org.pircbotx.User user) {
+    IRCUser(org.kitteh.irc.client.library.element.User user) {
         this.user = user;
     }
 
@@ -39,13 +39,13 @@ class IRCUser implements User {
     @Nullable
     @Override
     public String getLogin() {
-        return user.getLogin();
+        return user.getUserString();
     }
 
     @Nullable
     @Override
     public String getHostMask() {
-        return user.getHostmask();
+        return user.getHost();
     }
 
 }

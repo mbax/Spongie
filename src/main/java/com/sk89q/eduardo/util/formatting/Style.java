@@ -19,45 +19,45 @@
 
 package com.sk89q.eduardo.util.formatting;
 
-import org.pircbotx.Colors;
+import org.kitteh.irc.client.library.util.Format;
 
 /**
  * All supported color values for chat.
  */
 public enum Style {
 
-    RESET(Colors.NORMAL, false),
-    BOLD(Colors.BOLD, false),
-    UNDERLINE(Colors.UNDERLINE, false),
-    REVERSE(Colors.REVERSE, false),
+    RESET(Format.RESET, false),
+    BOLD(Format.BOLD, false),
+    UNDERLINE(Format.UNDERLINE, false),
+    REVERSE(Format.REVERSE, false),
 
-    WHITE(Colors.WHITE),
-    BLACK(Colors.BLACK),
-    DARK_BLUE(Colors.DARK_BLUE),
-    DARK_GREEN(Colors.DARK_GREEN),
-    RED(Colors.RED),
-    BROWN(Colors.BROWN),
-    PURPLE(Colors.PURPLE),
-    OLIVE(Colors.OLIVE),
-    YELLOW(Colors.YELLOW),
-    GREEN(Colors.GREEN),
-    TEAL(Colors.TEAL),
-    CYAN(Colors.CYAN),
-    BLUE(Colors.BLUE),
-    MAGENTA(Colors.MAGENTA),
-    DARK_GRAY(Colors.DARK_GRAY),
-    LIGHT_GRAY(Colors.LIGHT_GRAY);
+    WHITE(Format.WHITE),
+    BLACK(Format.BLACK),
+    DARK_BLUE(Format.DARK_BLUE),
+    DARK_GREEN(Format.DARK_GREEN),
+    RED(Format.RED),
+    BROWN(Format.BROWN),
+    PURPLE(Format.PURPLE),
+    OLIVE(Format.OLIVE),
+    YELLOW(Format.YELLOW),
+    GREEN(Format.GREEN),
+    TEAL(Format.TEAL),
+    CYAN(Format.CYAN),
+    BLUE(Format.BLUE),
+    MAGENTA(Format.MAGENTA),
+    DARK_GRAY(Format.DARK_GRAY),
+    LIGHT_GRAY(Format.LIGHT_GRAY);
 
     private final String code;
     private final boolean color;
 
-    private Style(String code) {
-        this.code = code;
+    private Style(Format code) {
+        this.code = code.toString();
         this.color = true;
     }
 
-    private Style(String code, boolean color) {
-        this.code = code;
+    private Style(Format code, boolean color) {
+        this.code = code.toString();
         this.color = color;
     }
 
@@ -70,7 +70,7 @@ public enum Style {
     }
 
     public static String stripColor(String str) {
-        return Colors.removeFormattingAndColors(str);
+        return Format.stripAll(str);
     }
 
     @Override

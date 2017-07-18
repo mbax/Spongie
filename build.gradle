@@ -68,7 +68,7 @@ dependencies {
     compile 'com.h2database:h2:1.3.170'
 
     // Connectors
-    compile 'org.pircbotx:pircbotx:2.0.1'
+    compile 'org.kitteh.irc:client-lib:3.2.1:shaded'
     compile 'com.github.taksan:skype-java-api:1.4'
 
     // Modules
